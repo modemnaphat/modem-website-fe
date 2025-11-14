@@ -12,8 +12,8 @@ const lineSeed = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Modem",
-  description: "Modem Website Software Engineer",
+  title: "Modem Website",
+  description: "Modem Portfolio Website | My Journey as a Software Developer",
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lineSeed.variable}`}>
       <body
-        className={`antialiased`}
+        className={`min-h-screen antialiased`}
       >
         {children}
       </body>
