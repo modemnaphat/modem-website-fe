@@ -4,8 +4,9 @@ import "./globals.css";
 
 const lineSeed = localFont({
   src: [
-    { path: "./fonts/LINESeedSansTH_Rg.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/LINESeedSansTH_Bd.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/LINESeedSansTH_W_Th.woff", weight: "100", style: "normal" },
+    { path: "./fonts/LINESeedSansTH_W_Rg.woff", weight: "400", style: "normal" },
+    { path: "./fonts/LINESeedSansTH_W_Bd.woff", weight: "700", style: "normal" },
   ],
   variable: "--font-lineseed",
   display: "swap",
