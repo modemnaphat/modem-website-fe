@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -17,8 +19,35 @@
   }
 }
 
+* {
+  outline: none !important;
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-lineseed);
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+@layer utilities {
+  @keyframes textPulse {
+    0%,
+    100% {
+      color: #ffffff;
+    }
+    50% {
+      color: #8b0000;
+    }
+  }
+
+  .animate-textPulse {
+    animation: textPulse 5s infinite ease-in-out;
+  }
 }
