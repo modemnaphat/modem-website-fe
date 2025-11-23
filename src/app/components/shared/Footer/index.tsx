@@ -55,9 +55,9 @@ const Footer: React.FC = () => {
               <Image
                 src={ele.icon}
                 alt={`contact-icon ${index + 1}`}
-                className={`opacity-70 group-hover:opacity-100 transition-all duration-500`}
-                width={24}
-                height={24}
+                className={`w-6 h-6 opacity-70 group-hover:opacity-100 transition-all duration-500`}
+                width={0}
+                height={0}
               />
             </a>
           ))}

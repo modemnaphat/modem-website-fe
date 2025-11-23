@@ -49,7 +49,7 @@ const Navtop: React.FC = () => {
           {navMenuList.map((ele, index) => (
             <div
               key={index}
-              className="relative px-0.5 py-1 cursor-pointer group opacity-90"
+              className="relative px-0.5 py-1 cursor-pointer group"
             >
               <p className="text-white select-none">{ele.name}</p>
               <span className="absolute bottom-0 left-0 h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-300" />
