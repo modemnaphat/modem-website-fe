@@ -1,6 +1,12 @@
-export type Skills = {
+export type Skill = {
   id: number;
   iconUrl: string;
   name: string;
-  level: number;
-}[]
+};
+
+export type techSkill = {
+  id: number;
+  iconUrl: string;
+  name: string;
+  description: string;
+};
