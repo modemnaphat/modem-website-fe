@@ -36,6 +36,16 @@ body {
   font-weight: 700 !important;
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+
 @layer utilities {
   @keyframes textPulse {
     0%,
@@ -43,11 +53,41 @@ body {
       color: #ffffff;
     }
     50% {
-      color: #8b0000;
+      color: #ff3334;
     }
   }
 
   .animate-textPulse {
     animation: textPulse 5s infinite ease-in-out;
+  }
+}
+
+@layer utilities {
+  @keyframes carousel {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-carousel {
+    animation: carousel 25s linear infinite;
+  }
+
+  .pause-animation {
+    animation-play-state: paused;
+  }
+}
+
+@layer utilities {
+  @keyframes skeleton-shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
   }
 }
