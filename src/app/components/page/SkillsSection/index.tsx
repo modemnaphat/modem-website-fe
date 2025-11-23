@@ -1,18 +1,26 @@
 "use client";
 
 // Lib
-import React, { useState } from "react";
+import React from "react";
 
 // Include in Project
-import { Skills } from "@/app/utils/types";
+import { useSkills } from "@/app/hooks/api";
+import LogoSlide from "./main";
+import SkeletonSection from "./skeleton";
 
 const SkillsSection: React.FC = () => {
-  const [skills, setSkills] = useState<Skills>([]);
-  return (
-    <div className={`flex flex-col items-center w-full`}>
-      <h2 className={`text-6xl`}>Skills</h2>
+  const { data: skills, isLoading } = useSkills();
 
-      <div className={`w-full border border-blue-500`}>SLIDE SECTION</div>
+  return (
+    <div className="w-full flex flex-col gap-12">
+      <div className="flex flex-col gap-2 items-center w-full">
+        <h2 className="text-3xl font-bold text-white text-center">Tech Stack</h2>
+        <p className="text-white text-center">
+          My Tech Stack: Frameworks, Libraries, and Programming Languages
+        </p>
+      </div>
+
+      {isLoading ? <SkeletonSection /> : <LogoSlide skills={skills || []} />}
     </div>
   );
 };
