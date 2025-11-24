@@ -10,3 +10,9 @@ export type techSkill = {
   name: string;
   description: string;
 };
+
+export type Tool = {
+  id: number;
+  iconUrl: string;
+  name: string;
+};
