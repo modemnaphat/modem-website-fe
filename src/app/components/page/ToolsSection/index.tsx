@@ -94,7 +94,7 @@ const TechnicSkillSection: React.FC = () => {
                 {tool.name}
               </p>
 
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-white/5 to-transparent" />
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-linear-to-br from-white/5 to-transparent" />
             </div>
           ))}
         </div>
