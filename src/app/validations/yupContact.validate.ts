@@ -6,9 +6,6 @@ const yupContact = Yup.object().shape({
     email: Yup.string()
       .required("Email is required")
       .email("Invalid email format"),
-    tel: Yup.string(),
-    company: Yup.string(),
-    message: Yup.string(),
   }),
 });
 
