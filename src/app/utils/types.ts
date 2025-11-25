@@ -16,3 +16,11 @@ export type Tool = {
   iconUrl: string;
   name: string;
 };
+
+export type TContact = {
+  email: string;
+  name: string;
+  tel: string;
+  company: string;
+  message: string;
+};
