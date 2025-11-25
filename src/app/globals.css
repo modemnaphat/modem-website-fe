@@ -46,6 +46,10 @@ body {
   overscroll-behavior: contain;
 }
 
+.scrollbar {
+  scrollbar-width: thin;
+}
+
 @layer utilities {
   @keyframes textPulse {
     0%,
