@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ReactQueryProvider } from "./providers/ReactQueryProvider";
+import { SnackbarProviderWrapper } from "./providers/SnackbarProviderWrapper";
 
 const lineSeed = localFont({
   src: [
@@ -38,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lineSeed.variable}`}>
       <body className={`min-h-screen antialiased`}>
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <SnackbarProviderWrapper>
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </SnackbarProviderWrapper>
       </body>
     </html>
   );
