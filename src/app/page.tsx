@@ -5,7 +5,8 @@ import {
   TechnicSkillSection,
   ToolsSection,
   ContactSection,
-  AboutMeSection
+  AboutMeSection,
+  ProjectSection
 } from "@/app/components/page";
 import { Navtop, Footer } from "@/app/components/shared";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <SkillsSection />
         <TechnicSkillSection />
         <ToolsSection />
+        <ProjectSection />
         <ContactSection />
       </div>
       <div className={`w-full h-fit mt-8 mb-4`}>
