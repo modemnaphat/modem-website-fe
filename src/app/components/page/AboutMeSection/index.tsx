@@ -4,7 +4,7 @@
 import React from "react";
 
 // Include in Project
-import { useProfile } from "@/app/hooks/api/useProfile";
+import { useProfile } from "@/app/hooks/api";
 import MainSection from "./main";
 import SkeletonSection from "./skeleton";
 
