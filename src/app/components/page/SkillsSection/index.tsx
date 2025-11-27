@@ -12,7 +12,7 @@ const SkillsSection: React.FC = () => {
   const { data: skills, isLoading } = useSkills();
 
   return (
-    <div className="w-full flex flex-col gap-12">
+    <div className="w-full flex flex-col gap-12 mt-16">
       <div className="flex flex-col gap-2 items-center w-full">
         <h2 className="text-3xl font-bold text-white text-center">Tech Stack</h2>
         <p className="text-white text-center">
