@@ -27,7 +27,7 @@ const MainSection: React.FC<Props> = ({ profile }) => {
           width={0}
           height={0}
           sizes="50vw"
-          quality={75}
+          // quality={75}
           priority
           className="rounded-lg w-full h-auto object-cover"
         />

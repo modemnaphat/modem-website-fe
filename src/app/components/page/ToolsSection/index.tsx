@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useTools } from "@/app/hooks/api";
 import ToolsSkeletonSection from "./skeleton";
 
-const TechnicSkillSection: React.FC = () => {
+const ToolsSection: React.FC = () => {
   const { data: tools, isLoading } = useTools();
 
   const [isVisible, setIsVisible] = useState(false);
@@ -103,4 +103,4 @@ const TechnicSkillSection: React.FC = () => {
   );
 };
 
-export default TechnicSkillSection;
+export default ToolsSection;
