@@ -29,3 +29,5 @@ export const contactList = [
     link: "https://drive.google.com/file/d/1s19LxJVsCrlpi_-6JrQnj6F3WxGhaar0/view?usp=sharing",
   },
 ];
+
+export const GITHUB = "https://github.com/modemnaphat"

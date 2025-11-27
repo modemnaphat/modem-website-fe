@@ -24,3 +24,11 @@ export type TContact = {
   company: string;
   message: string;
 };
+
+export type TProfile = {
+  profilePicUrl: string
+  name: string
+  nickName: string
+  age: number
+  description: string
+};
