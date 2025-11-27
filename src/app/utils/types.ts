@@ -32,3 +32,12 @@ export type TProfile = {
   age: number
   description: string
 };
+
+export type TProject = {
+  id: number
+  name: string
+  description: string
+  coverImgUrl: string
+  sourceUrl: string
+  skills: Skill[]
+}
