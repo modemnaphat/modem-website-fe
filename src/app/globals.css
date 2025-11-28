@@ -36,6 +36,10 @@ body {
   font-family: var(--font-lineseed);
 }
 
+.font-hero {
+  font-family: var(--audiowide);
+}
+
 .bold {
   font-weight: 700 !important;
 }
@@ -68,6 +72,21 @@ body {
   .animate-textPulse {
     animation: textPulse 5s infinite ease-in-out;
   }
+}
+
+@keyframes softGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(96, 165, 250, 0.5),
+      0 0 20px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.animate-softGlow {
+  animation: softGlow 3s ease-in-out infinite;
 }
 
 @layer utilities {

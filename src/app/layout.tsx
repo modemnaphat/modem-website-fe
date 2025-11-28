@@ -26,6 +26,18 @@ const lineSeed = localFont({
   display: "swap",
 });
 
+const hero = localFont({
+  src: [
+    {
+      path: "./fonts/Audiowide-Regular.ttf",
+      weight: "100",
+      style: "normal",
+    },
+  ],
+  variable: "--audiowide",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Modem Website",
   description: "Modem Portfolio Website | My Journey as a Software Developer",
@@ -37,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lineSeed.variable}`}>
+    <html lang="en" className={`${lineSeed.variable} ${hero.variable}`}>
       <body className={`min-h-screen antialiased`}>
         <SnackbarProviderWrapper>
           <ReactQueryProvider>{children}</ReactQueryProvider>
