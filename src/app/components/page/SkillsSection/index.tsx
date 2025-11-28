@@ -16,7 +16,7 @@ const SkillsSection: React.FC = () => {
       <div className="flex flex-col gap-2 items-center w-full">
         <h2 className="text-3xl font-bold text-white text-center">Tech Stack</h2>
         <p className="text-white text-center">
-          My Tech Stack: Frameworks, Libraries, and Programming Languages
+          My <span className="text-emerald-500">Tech Stack</span>: Frameworks, Libraries, and Programming Languages
         </p>
       </div>
 

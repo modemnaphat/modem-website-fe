@@ -19,7 +19,7 @@ const TechnicSkillSection: React.FC = () => {
           Technical Skills
         </h2>
         <p className="text-white text-center">
-          Essential web development skills I apply in my project.
+          Essential web development <span className="text-rose-500">skills</span> I apply in my project.
         </p>
       </div>
 

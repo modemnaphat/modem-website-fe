@@ -17,8 +17,6 @@ const Navtop: React.FC = () => {
   const animationFrameId = useRef<number | null>(null);
 
   const handleScroll = (id: string) => {
-    if (isScrolling) return;
-
     const targetPosition =
       id === "home"
         ? 0
@@ -94,12 +92,13 @@ const Navtop: React.FC = () => {
           animationFrameId.current = requestAnimationFrame(animation);
         } else {
           animationFrameId.current = null;
-          setIsScrolling(false);
 
           // ปลดล็อคการ scroll เมื่อ animation เสร็จ
           document.removeEventListener("wheel", preventScroll);
           document.removeEventListener("touchmove", preventScroll);
           document.removeEventListener("keydown", preventScroll);
+
+          setIsScrolling(false);
         }
       };
 
@@ -135,16 +134,10 @@ const Navtop: React.FC = () => {
               width={56}
               height={56}
             />
-            <p className="text-lg text-white text-nowrap pointer-events-none max-md:hidden flex gap-0.5">
-              {"MODEM".split("").map((char, i) => (
-                <span
-                  key={i}
-                  className="animate-textPulse"
-                  style={{ animationDelay: `${i * 1}s` }}
-                >
-                  {char}
-                </span>
-              ))}
+            <p className="text-lg text-nowrap pointer-events-none max-md:hidden">
+              <span className="text-white font-semibold tracking-wide animate-softGlow">
+                MODEM
+              </span>
             </p>
           </Link>
 

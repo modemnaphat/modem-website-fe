@@ -17,8 +17,9 @@ export default function Home() {
         <Navtop />
       </div>
       <div
-        className={`max-w-6xl mx-auto w-full max-xl:px-4 my-20 overflow-hidden`}
+        className={`max-w-6xl mx-auto w-full max-xl:px-4 mb-20 overflow-hidden`}
       >
+        <HeaderSection />
         <div id="about">
           <AboutMeSection />
         </div>

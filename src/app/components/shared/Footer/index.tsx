@@ -10,13 +10,13 @@ import { contactList, navMenuList } from "@/app/utils/others";
 const Footer: React.FC = () => {
   return (
     <div
-      className={`flex flex-col justify-between items-center max-w-6xl mx-auto w-full h-full border-t border-[#282828] max-xl:px-4 max-lg:gap-4`}
+      className={`flex flex-col justify-between items-center gap-12 max-w-6xl mx-auto w-full h-full border-t border-[#282828] max-xl:px-4 max-lg:gap-4`}
     >
       <div
-        className={`flex justify-between items-center w-full pt-4 max-lg:flex-col max-lg:gap-8`}
+        className={`flex justify-center items-center w-full pt-4 max-lg:flex-col max-lg:gap-8`}
       >
-        <div
-          className={`flex items-center flex-2 gap-12 flex-wrap max-lg:gap-8`}
+        {/* <div
+          className={`flex items-center gap-12 flex-wrap max-lg:gap-8`}
         >
           <Image
             src={`/modem-gry.svg`}
@@ -42,9 +42,10 @@ const Footer: React.FC = () => {
               <p className={`text-white/70 hover:text-white transition-all duration-500`}>{ele.name}</p>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        <div className="flex flex-1 gap-4 items-center justify-end">
+        <div className="flex gap-4 items-center justify-center pt-4">
+          <p className="text-white/70 text-lg">Elsewhere</p>
           {contactList.map((ele, index) => (
             <a
               className={`cursor-pointer group`}
