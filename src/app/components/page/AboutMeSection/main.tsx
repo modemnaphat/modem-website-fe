@@ -27,8 +27,8 @@ const MainSection: React.FC<Props> = ({ profile }) => {
           width={0}
           height={0}
           sizes="50vw"
-          // quality={75}
-          priority
+          quality={75}
+          loading="lazy"
           className="rounded-lg w-full h-auto object-cover"
         />
         <Image
