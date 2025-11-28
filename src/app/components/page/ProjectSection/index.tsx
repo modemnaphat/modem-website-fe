@@ -60,7 +60,7 @@ const ProjectSection: React.FC = () => {
         </p>
       </div>
 
-      {!isLoading ? (
+      {isLoading ? (
         <SkeletonSection shouldAnimate={shouldAnimate} />
       ) : (
         <ProjectContainer data={data || []} shouldAnimate={shouldAnimate} />
