@@ -5,10 +5,10 @@ import LinkedInSVG from "@/app/images/icons/linkedin.svg";
 import CVSVG from "@/app/images/icons/cv.svg";
 
 export const navMenuList = [
-  { name: "Home", url: "/" },
-  { name: "About", url: "/" },
-  { name: "Projects", url: "/" },
-  { name: "Contact", url: "/" },
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
 ];
 
 export const contactList = [
@@ -30,4 +30,4 @@ export const contactList = [
   },
 ];
 
-export const GITHUB = "https://github.com/modemnaphat"
+export const GITHUB = "https://github.com/modemnaphat";
