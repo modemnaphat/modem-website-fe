@@ -10,7 +10,7 @@ import { contactList, navMenuList } from "@/app/utils/others";
 const Footer: React.FC = () => {
   return (
     <div
-      className={`flex flex-col justify-between items-center gap-12 max-w-6xl mx-auto w-full h-full border-t border-[#282828] max-xl:px-4 max-lg:gap-4`}
+      className={`flex flex-col justify-between items-center gap-12 max-w-6xl mx-auto w-full h-full border-t border-[#282828] max-xl:px-4 max-lg:gap-8`}
     >
       <div
         className={`flex justify-center items-center w-full pt-4 max-lg:flex-col max-lg:gap-8`}

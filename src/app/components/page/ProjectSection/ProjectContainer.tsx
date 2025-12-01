@@ -26,13 +26,14 @@ const ProjectContainer: React.FC<Props> = ({ data, shouldAnimate }) => {
           }`}
           style={{ transitionDelay: `${index * 150}ms` }}
         >
-          <Image
-            src={ele.coverImgUrl}
-            alt={`${ele.name} cover-image`}
-            width={445}
-            height={334}
-            className={``}
-          />
+          <div className="flex justify-center">
+            <Image
+              src={ele.coverImgUrl}
+              alt={`${ele.name} cover-image`}
+              width={445}
+              height={334}
+            />
+          </div>
           <div className="flex flex-col justify-center gap-2">
             <h3 className="text-4xl font-bold">{ele.name}</h3>
             <p className="text-gray-300">{ele.description}</p>

@@ -99,7 +99,7 @@ const HeaderSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center w-full min-h-screen overflow-hidden bg-[#0a0a0a]">
+    <div className="relative flex items-center justify-center w-full min-h-[calc(100dvh-60px)] overflow-hidden bg-[#0a0a0a]">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       <div className="relative z-10 px-6 text-center">
