@@ -41,6 +41,10 @@ const hero = localFont({
 export const metadata: Metadata = {
   title: "Modem Website",
   description: "Modem Portfolio Website | My Journey as a Software Developer",
+
+  verification: {
+    google: "konrk-_mGKTnX1WxWL4n5gcXRABtxBKbQZ0F7qkdvjI",
+  },
 };
 
 export default function RootLayout({
