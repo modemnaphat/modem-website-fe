@@ -57,6 +57,22 @@ export const metadata: Metadata = {
     url: "https://modem-website-fe.vercel.app/",
     siteName: "Modem Portfolio",
     type: "website",
+    images: [
+      {
+        url: "https://modem-website-fe.vercel.app/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Modem Portfolio",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Modem – Software Developer",
+    description:
+      "Portfolio website of Modem, a Software Developer specializing in modern web technologies.",
+    images: ["https://modem-website-fe.vercel.app/og.png"],
   },
 
   robots: {
