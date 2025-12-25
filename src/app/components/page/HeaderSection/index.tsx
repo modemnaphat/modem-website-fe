@@ -1,6 +1,6 @@
 import HeroCanvas from "./HeroCanvas";
 
-export default function HeroSection() {
+const HeaderSection: React.FC = () => {
   return (
     <section className="relative flex items-center justify-center min-h-[calc(100dvh-60px)] overflow-hidden bg-[#0a0a0a]">
       <HeroCanvas />
@@ -13,10 +13,12 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        <p className="text-3xl font-light text-gray-200 max-md:text-xl">
+        <h2 className="text-3xl font-light text-gray-200 max-md:text-xl">
           Software Developer
-        </p>
+        </h2>
       </div>
     </section>
   );
 }
+
+export default HeaderSection;
