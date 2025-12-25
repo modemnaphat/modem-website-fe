@@ -26,7 +26,7 @@ export const contactList = [
   },
   {
     icon: CVSVG,
-    link: "https://drive.google.com/file/d/1s19LxJVsCrlpi_-6JrQnj6F3WxGhaar0/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1RG3GwdO6N17FNaQID7m_KrJIfP1qkxQ-/view?usp=sharing",
   },
 ];
 
