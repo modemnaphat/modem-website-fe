@@ -39,11 +39,29 @@ const hero = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Modem Website",
-  description: "Modem Portfolio Website | My Journey as a Software Developer",
+  title: {
+    default: "Modem – Software Developer Portfolio",
+    template: "%s | Modem",
+  },
+  description:
+    "Full-Stack Developer Portfolio. Projects built with NextJS, NodeJS+ Express, TypeScript, and modern web technologies.",
 
   verification: {
     google: "konrk-_mGKTnX1WxWL4n5gcXRABtxBKbQZ0F7qkdvjI",
+  },
+
+  openGraph: {
+    title: "Modem – Software Developer",
+    description:
+      "Portfolio website of Modem, a Software Developer specializing in modern web technologies.",
+    url: "https://modem-website-fe.vercel.app/",
+    siteName: "Modem Portfolio",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
