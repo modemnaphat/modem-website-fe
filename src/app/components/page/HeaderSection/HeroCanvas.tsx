@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function HeroCanvas() {
+const HeroCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -87,4 +87,6 @@ export default function HeroCanvas() {
       aria-hidden="true"
     />
   );
-}
+};
+
+export default HeroCanvas;
