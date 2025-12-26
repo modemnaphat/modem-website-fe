@@ -50,6 +50,11 @@ export const metadata: Metadata = {
     google: "konrk-_mGKTnX1WxWL4n5gcXRABtxBKbQZ0F7qkdvjI",
   },
 
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
+
   openGraph: {
     title: "Modem – Software Developer",
     description:
