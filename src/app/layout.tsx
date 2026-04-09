@@ -40,11 +40,22 @@ const hero = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Modem – Software Developer Portfolio",
-    template: "%s | Modem",
+    default: "ModemNP – Software Developer Portfolio",
+    template: "%s | ModemNP",
   },
   description:
-    "Full-Stack Developer Portfolio. Projects built with NextJS, NodeJS+ Express, TypeScript, and modern web technologies.",
+    "modemnp – Full-Stack Developer Portfolio. Projects built with NextJS, NodeJS+ Express, TypeScript, and modern web technologies.",
+
+  keywords: [
+    "modemnp",
+    "ModemNP",
+    "portfolio",
+    "software developer",
+    "full-stack developer",
+    "web developer",
+    "NextJS",
+    "TypeScript",
+  ],
 
   verification: {
     google: "konrk-_mGKTnX1WxWL4n5gcXRABtxBKbQZ0F7qkdvjI",
@@ -56,27 +67,27 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Modem – Software Developer",
+    title: "ModemNP – Software Developer",
     description:
-      "Portfolio website of Modem, a Software Developer specializing in modern web technologies.",
+      "Portfolio website of modemnp, a Software Developer specializing in modern web technologies.",
     url: "https://modem-website-fe.vercel.app/",
-    siteName: "Modem Portfolio",
+    siteName: "ModemNP Portfolio",
     type: "website",
     images: [
       {
         url: "https://modem-website-fe.vercel.app/banner.png",
         width: 1200,
         height: 630,
-        alt: "Modem Portfolio",
+        alt: "ModemNP Portfolio",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Modem – Software Developer",
+    title: "ModemNP – Software Developer",
     description:
-      "Portfolio website of Modem, a Software Developer specializing in modern web technologies.",
+      "Portfolio website of modemnp, a Software Developer specializing in modern web technologies.",
     images: ["https://modem-website-fe.vercel.app/banner.png"],
   },
 
