@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { useTools } from "@/app/hooks/api";
+import { usePortfolio } from "@/app/hooks/api";
 import ToolsSkeletonSection from "./skeleton";
 
 const ToolsSection: React.FC = () => {
-  const { data: tools, isLoading } = useTools();
+  const { data, isLoading } = usePortfolio();
+  const tools = data?.tools;
 
   const [isVisible, setIsVisible] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -22,7 +23,7 @@ const ToolsSection: React.FC = () => {
       },
       {
         threshold: 0.1,
-        rootMargin: "-25% 0px -50% 0px", // 50% from bottom
+        rootMargin: "-25% 0px -50% 0px",
       }
     );
 
@@ -35,7 +36,6 @@ const ToolsSection: React.FC = () => {
     };
   }, []);
 
-  // wait for visible and tools ready
   useEffect(() => {
     if (isVisible && tools && tools.length > 0) {
       setShouldAnimate(true);
@@ -65,7 +65,7 @@ const ToolsSection: React.FC = () => {
               flex flex-col items-center justify-center gap-4
               border border-white/10
               transition-all duration-300 ease-out
-              hover:bg-white/10 
+              hover:bg-white/10
               hover:border-white/20
               hover:-translate-y-1
               hover:shadow-lg hover:shadow-white/5

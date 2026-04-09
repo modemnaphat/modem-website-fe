@@ -1,6 +1,2 @@
-export { useSkills } from './useSkills'
-export { useTechSkills } from './useTechSkills'
-export { useTools } from './useTools'
+export { usePortfolio } from './usePortfolio'
 export { useContactMutation } from './useContactMutation'
-export { useProfile } from './useProfile'
-export { useProjects } from './useProject'

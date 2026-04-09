@@ -4,12 +4,13 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // Include in Project
-import { useProjects } from "@/app/hooks/api";
+import { usePortfolio } from "@/app/hooks/api";
 import ProjectContainer from "./ProjectContainer";
 import SkeletonSection from "./skeleton";
 
 const ProjectSection: React.FC = () => {
-  const { data, isLoading } = useProjects();
+  const { data, isLoading } = usePortfolio();
+  const projects = data?.projects;
 
   const [isVisible, setIsVisible] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -40,10 +41,10 @@ const ProjectSection: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isVisible && data && data.length > 0) {
+    if (isVisible && projects && projects.length > 0) {
       setShouldAnimate(true);
     }
-  }, [isVisible, data]);
+  }, [isVisible, projects]);
 
   return (
     <div
@@ -63,7 +64,7 @@ const ProjectSection: React.FC = () => {
       {isLoading ? (
         <SkeletonSection shouldAnimate={shouldAnimate} />
       ) : (
-        <ProjectContainer data={data || []} shouldAnimate={shouldAnimate} />
+        <ProjectContainer data={projects || []} shouldAnimate={shouldAnimate} />
       )}
     </div>
   );

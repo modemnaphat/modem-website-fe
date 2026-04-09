@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model Profile {
+  id            Int     @id @default(1)
+  profilePicUrl String?
+  name          String?
+  nickName      String?
+  age           Int?
+  description   String?
+}
+
+model Skill {
+  id       Int       @id @default(autoincrement())
+  name     String?
+  iconUrl  String?
+  projects Project[]
+}
+
+model Tool {
+  id      Int     @id @default(autoincrement())
+  name    String?
+  iconUrl String?
+}
+
+model TechnicalSkill {
+  id          Int     @id @default(autoincrement())
+  name        String?
+  iconUrl     String?
+  description String?
+}
+
+model Project {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String?
+  coverImgUrl String?
+  sourceUrl   String?
+  skills      Skill[]
+}
+
+model Contact {
+  uid     Int     @id @default(autoincrement())
+  email   String?
+  name    String?
+  tel     String?
+  company String?
+  message String?
+}

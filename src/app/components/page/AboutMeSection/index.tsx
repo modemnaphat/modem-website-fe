@@ -4,12 +4,13 @@
 import React from "react";
 
 // Include in Project
-import { useProfile } from "@/app/hooks/api";
+import { usePortfolio } from "@/app/hooks/api";
 import MainSection from "./main";
 import SkeletonSection from "./skeleton";
 
 const AboutMeSection: React.FC = () => {
-  const { data: profile, isLoading } = useProfile();
+  const { data, isLoading } = usePortfolio();
+  const profile = data?.profile;
 
   return (
     <div className="w-full flex flex-col gap-12 mt-16">
