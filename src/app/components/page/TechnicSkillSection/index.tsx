@@ -4,13 +4,13 @@
 import React from "react";
 
 // Include in Project
-import { useTechSkills } from "@/app/hooks/api";
+import { usePortfolio } from "@/app/hooks/api";
 import Box from "./box";
 import TechnicSkillSkeletonSection from "./skeleton";
-import { techSkill } from "@/app/utils/types";
 
 const TechnicSkillSection: React.FC = () => {
-  const { data: techSkills, isLoading } = useTechSkills();
+  const { data, isLoading } = usePortfolio();
+  const techSkills = data?.techSkills;
 
   return (
     <div className="w-full flex flex-col gap-12 mt-16">

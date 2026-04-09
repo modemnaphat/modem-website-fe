@@ -4,12 +4,13 @@
 import React from "react";
 
 // Include in Project
-import { useSkills } from "@/app/hooks/api";
+import { usePortfolio } from "@/app/hooks/api";
 import LogoSlide from "./main";
 import SkeletonSection from "./skeleton";
 
 const SkillsSection: React.FC = () => {
-  const { data: skills, isLoading } = useSkills();
+  const { data, isLoading } = usePortfolio();
+  const skills = data?.skills;
 
   return (
     <div className="w-full flex flex-col gap-12 mt-16">

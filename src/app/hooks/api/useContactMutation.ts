@@ -1,18 +1,19 @@
 "use client";
 
-// Lib
 import { useMutation } from "@tanstack/react-query";
 import { enqueueSnackbar } from "notistack";
-
-// Include in Project
-import { api } from "@/app/configs/axios";
 import type { TContact } from "@/app/utils/types";
 
 async function createContact(
   newContact: Omit<TContact, "uid">
 ): Promise<TContact> {
-  const res = await api.post<TContact>("/contacts", newContact);
-  return res.data;
+  const res = await fetch("/api/contacts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newContact),
+  });
+  if (!res.ok) throw new Error("Failed to send contact");
+  return res.json();
 }
 
 export function useContactMutation() {

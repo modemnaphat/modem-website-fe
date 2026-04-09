@@ -41,3 +41,11 @@ export type TProject = {
   sourceUrl: string
   skills: Skill[]
 }
+
+export type TPortfolio = {
+  profile: TProfile | null
+  skills: Skill[]
+  techSkills: techSkill[]
+  tools: Tool[]
+  projects: TProject[]
+}
