@@ -3,10 +3,10 @@ A personal portfolio website created to showcase projects, technical skills, and
 This project is designed to demonstrate real-world frontend (and optional full-stack) development skills and to be used as a professional portfolio for job applications.
 
 🔗 Live On
-[https://your-portfolio-url.com](https://modem-website-fe.vercel.app/)
+[modem-website-fe.vercel.app](https://modem-website-fe.vercel.app/)
 
 📂 GitHub Repository
-[https://github.com/your-username/portfolio-website](https://github.com/modemnaphat/modem-website-fe)
+[https://github.com/modem-website-fe/portfolio-website](https://github.com/modemnaphat/modem-website-fe)
 
 🧑‍💻 About This Project
 - This portfolio website was built to:
