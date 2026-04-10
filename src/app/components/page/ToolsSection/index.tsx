@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { usePortfolio } from "@/app/hooks/api";
 import ToolsSkeletonSection from "./skeleton";
+import ToolCard from "./card";
 
 const ToolsSection: React.FC = () => {
   const { data, isLoading } = usePortfolio();
@@ -57,45 +58,12 @@ const ToolsSection: React.FC = () => {
       ) : (
         <div className="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 gap-6 w-full">
           {tools?.map((tool, index) => (
-            <div
+            <ToolCard
               key={tool.id}
-              className={`
-              group relative
-              bg-white/5 rounded-2xl p-6 h-48 max-md:p-2
-              flex flex-col items-center justify-center gap-4
-              border border-white/10
-              transition-all duration-300 ease-out
-              hover:bg-white/10
-              hover:border-white/20
-              hover:-translate-y-1
-              hover:shadow-lg hover:shadow-white/5
-              cursor-default
-              opacity-0
-              ${shouldAnimate ? "animate-fade-in" : ""}
-            `}
-              style={{
-                animationDelay: shouldAnimate ? `${index * 0.1}s` : undefined,
-                animationFillMode: "forwards",
-              }}
-            >
-              {tool.iconUrl ? (
-                <div className="w-16 h-16 bg-gray-700 rounded-lg flex items-center justify-center p-2">
-                  <img
-                    src={tool.iconUrl}
-                    alt={tool.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-              ) : (
-                <div className="w-16 h-16 bg-gray-700 rounded-lg" />
-              )}
-
-              <p className="text-white text-center transition-colors duration-300 group-hover:text-white/90 line-clamp-1">
-                {tool.name}
-              </p>
-
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-linear-to-br from-white/5 to-transparent" />
-            </div>
+              tool={tool}
+              index={index}
+              shouldAnimate={shouldAnimate}
+            />
           ))}
         </div>
       )}
