@@ -8,19 +8,31 @@ import { Skeleton } from "@/app/components/shared";
 
 const SkeletonSection: React.FC = () => {
   return (
-    <div className="grid grid-cols-2 w-full gap-4 max-md:grid-cols-1">
-      <div className="flex items-center justify-center p-4">
-        <Skeleton className="w-full max-w-[400px] h-[275px] rounded-lg max-lg:h-[220px] max-md:h-[170px]" />
-      </div>
-      
-      <div className="p-4 flex flex-col gap-2">
-        <Skeleton className="h-8 w-3/4 rounded-lg" />
-        <Skeleton className="h-6 w-1/3 rounded-lg mt-1" />
-        
-        <div className="flex flex-col gap-2 mt-2">
-          <Skeleton className="h-4 w-full rounded-full" />
-          <Skeleton className="h-4 w-full rounded-full" />
-          <Skeleton className="h-4 w-4/5 rounded-full" />
+    <div className="w-full max-w-5xl mx-auto">
+      {/* macOS Window */}
+      <div className="rounded-xl overflow-hidden border border-gray-700 bg-[#1e1e2e] shadow-2xl">
+        {/* Title Bar */}
+        <div className="flex items-center gap-2 px-4 py-3 bg-[#181825] border-b border-gray-700">
+          <div className="w-3 h-3 rounded-full bg-red-500" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500" />
+          <div className="w-3 h-3 rounded-full bg-green-500" />
+          <span className="ml-3 text-gray-400 text-sm font-mono">about-me.tsx</span>
+        </div>
+
+        {/* Content Area */}
+        <div className="grid grid-cols-2 max-md:grid-cols-1">
+          {/* Left - Image Skeleton */}
+          <div className="flex items-center justify-center p-6 max-md:p-4 border-r border-gray-700 max-md:border-r-0 max-md:border-b">
+            <Skeleton className="w-full max-w-[380px] aspect-4/3 rounded-lg" />
+          </div>
+
+          {/* Right - Code Editor Skeleton */}
+          <div className="p-5 max-md:p-4 flex flex-col gap-3">
+            <Skeleton className="h-4 w-2/5 rounded" />
+            <Skeleton className="h-4 w-3/5 rounded" />
+            <Skeleton className="h-4 w-1/2 rounded" />
+            <Skeleton className="h-4 w-2/3 rounded" />
+          </div>
         </div>
       </div>
     </div>

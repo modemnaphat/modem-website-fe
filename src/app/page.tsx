@@ -8,7 +8,7 @@ import {
   AboutMeSection,
   ProjectSection,
 } from "@/app/components/page";
-import { Navtop, Footer } from "@/app/components/shared";
+import { Navtop, Footer, ChatBot } from "@/app/components/shared";
 
 export default function Home() {
   return (
@@ -36,6 +36,7 @@ export default function Home() {
       <div className={`w-full h-fit mt-8 mb-4`}>
         <Footer />
       </div>
+      <ChatBot />
     </div>
   );
 }

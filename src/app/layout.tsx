@@ -104,7 +104,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${lineSeed.variable} ${hero.variable}`}>
-      <body className={`min-h-screen antialiased`}>
+      <body className={`min-h-screen antialiased`} suppressHydrationWarning>
         <SnackbarProviderWrapper>
           <ReactQueryProvider>{children}</ReactQueryProvider>
         </SnackbarProviderWrapper>
