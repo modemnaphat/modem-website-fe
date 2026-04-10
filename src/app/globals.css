@@ -135,3 +135,79 @@ body {
     animation: fade-in 0.6s ease-out;
   }
 }
+
+/* ── Tools Section Effects ── */
+
+@layer utilities {
+  @keyframes tool-enter {
+    0% {
+      opacity: 0;
+      transform: perspective(600px) rotateX(8deg) translateY(30px) scale(0.92);
+    }
+    60% {
+      opacity: 1;
+      transform: perspective(600px) rotateX(-2deg) translateY(-4px) scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(600px) rotateX(0deg) translateY(0) scale(1);
+    }
+  }
+
+  .animate-tool-enter {
+    animation: tool-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* Hover border glow */
+.tool-border-glow {
+  background: conic-gradient(
+    from 0deg,
+    rgba(168, 85, 247, 0.4),
+    rgba(59, 130, 246, 0.3),
+    rgba(168, 85, 247, 0.1),
+    rgba(59, 130, 246, 0.3),
+    rgba(168, 85, 247, 0.4)
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  padding: 1px;
+  animation: tool-border-spin 3s linear infinite;
+}
+
+@keyframes tool-border-spin {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Icon ripple pulse */
+@keyframes tool-ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(168, 85, 247, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
+  }
+}
+
+.tool-icon-ripple {
+  animation: tool-ripple 1.5s ease-out infinite;
+}
+
+/* Card hover shadow */
+.tool-card:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.12), 0 0 0 1px rgba(168, 85, 247, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Card flip */
+.tool-flip-active {
+  transform: rotateY(180deg);
+}
