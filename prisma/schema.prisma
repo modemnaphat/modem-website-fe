@@ -60,3 +60,25 @@ model Contact {
   company String?
   message String?
 }
+
+model WebsiteVisitor {
+  id          String            @id @default(uuid())
+  firstSeenAt DateTime          @default(now())
+  lastSeenAt  DateTime          @updatedAt
+  pageViews   WebsitePageView[]
+
+  @@index([lastSeenAt])
+}
+
+model WebsitePageView {
+  id        Int            @id @default(autoincrement())
+  visitorId String
+  path      String
+  referrer  String?
+  createdAt DateTime       @default(now())
+  visitor   WebsiteVisitor @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+
+  @@index([createdAt])
+  @@index([path])
+  @@index([visitorId, createdAt])
+}

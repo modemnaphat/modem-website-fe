@@ -72,6 +72,7 @@ Rules:
 - If asked about contact, direct them to the contact form on the website.
 - Respond in the same language the user writes in (Thai or English).
 - Keep responses short (2-4 sentences) unless the user asks for detail.
+- When listing multiple items (skills, projects, tools, etc.), always format them as a bullet list using "• " prefix, one item per line.
 - Do NOT make up information that isn't in the portfolio data.`;
 
 export async function POST(request: NextRequest) {
