@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ReactQueryProvider } from "./providers/ReactQueryProvider";
 import { SnackbarProviderWrapper } from "./providers/SnackbarProviderWrapper";
+import { AnalyticsTracker } from "./components/shared";
 
 const lineSeed = localFont({
   src: [
@@ -106,7 +107,10 @@ export default function RootLayout({
     <html lang="en" className={`${lineSeed.variable} ${hero.variable}`}>
       <body className={`min-h-screen antialiased`} suppressHydrationWarning>
         <SnackbarProviderWrapper>
-          <ReactQueryProvider>{children}</ReactQueryProvider>
+          <ReactQueryProvider>
+            {children}
+            <AnalyticsTracker />
+          </ReactQueryProvider>
         </SnackbarProviderWrapper>
       </body>
     </html>

@@ -4,6 +4,7 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 // Images
 import MenuSVG from "@/app/images/icons/menu.svg";
@@ -11,10 +12,15 @@ import { navMenuList } from "@/app/utils/others";
 
 const NAV_HEIGHT = 60 + 32; // Padding 2em
 
+type NavMenuItem = (typeof navMenuList)[number];
+
 const Navtop: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const animationFrameId = useRef<number | null>(null);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isManagementPage = pathname === "/management";
 
   const handleScroll = (id: string) => {
     const targetPosition =
@@ -108,6 +114,44 @@ const Navtop: React.FC = () => {
     setIsOpen(false);
   };
 
+  const handleMenuClick = (menu: NavMenuItem) => {
+    const href = "href" in menu ? menu.href : undefined;
+
+    if (href) {
+      if (pathname === href) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setIsOpen(false);
+        return;
+      }
+
+      router.push(href);
+      setIsOpen(false);
+      return;
+    }
+
+    const id = "id" in menu ? menu.id : undefined;
+    if (!id) return;
+
+    if (pathname !== "/") {
+      router.push(id === "home" ? "/" : `/#${id}`);
+      setIsOpen(false);
+      return;
+    }
+
+    handleScroll(id);
+  };
+
+  const handleLogout = async () => {
+    await fetch("/api/management/logout", {
+      method: "POST",
+      credentials: "include",
+    });
+
+    setIsOpen(false);
+    router.push("/management/login");
+    router.refresh();
+  };
+
   return (
     <>
       {/* Navtop Header */}
@@ -122,6 +166,8 @@ const Navtop: React.FC = () => {
             href="/"
             className="flex items-center gap-2 h-full cursor-pointer"
             onClick={(e) => {
+              if (pathname !== "/") return;
+
               e.preventDefault();
               handleScroll("home");
             }}
@@ -142,17 +188,29 @@ const Navtop: React.FC = () => {
           </Link>
 
           {/* Desktop Menu List */}
-          <div className="flex items-center gap-16 h-full max-lg:hidden">
-            {navMenuList.map((ele, index) => (
-              <div
-                key={index}
-                className="relative px-0.5 py-1 cursor-pointer group"
-                onClick={() => handleScroll(ele.id)}
+          <div className="flex items-center gap-10 h-full max-lg:hidden">
+            <div className="flex items-center gap-16 h-full">
+              {navMenuList.map((ele, index) => (
+                <div
+                  key={index}
+                  className="relative px-0.5 py-1 cursor-pointer group"
+                  onClick={() => handleMenuClick(ele)}
+                >
+                  <p className="text-white select-none">{ele.name}</p>
+                  <span className="absolute bottom-0 left-0 h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-300" />
+                </div>
+              ))}
+            </div>
+
+            {isManagementPage && (
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="rounded-lg border border-red-500 bg-red-500 px-4 py-2 text-sm font-bold text-white transition-all duration-200 hover:bg-red-500/80"
               >
-                <p className="text-white select-none">{ele.name}</p>
-                <span className="absolute bottom-0 left-0 h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-300" />
-              </div>
-            ))}
+                Logout
+              </button>
+            )}
           </div>
 
           {/* Hamburger Menu */}
@@ -190,12 +248,22 @@ const Navtop: React.FC = () => {
               <div
                 key={index}
                 className="relative px-4 py-3 cursor-pointer group hover:bg-white/5 rounded-lg transition-colors duration-200"
-                onClick={() => handleScroll(ele.id)}
+                onClick={() => handleMenuClick(ele)}
               >
                 <p className="text-white select-none">{ele.name}</p>
                 <span className="absolute bottom-0 left-0 h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-300" />
               </div>
             ))}
+
+            {isManagementPage && (
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="mx-4 rounded-lg border border-red-500 bg-red-500 px-4 py-3 text-sm font-bold text-white transition-all duration-200 hover:bg-red-500/80"
+              >
+                Logout
+              </button>
+            )}
           </div>
         </div>
       </div>

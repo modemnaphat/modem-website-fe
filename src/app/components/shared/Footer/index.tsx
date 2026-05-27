@@ -50,7 +50,10 @@ const Footer: React.FC = () => {
             <a
               className={`cursor-pointer group`}
               href={ele.link}
-              target="_blank"
+              target={ele.link.startsWith("http") ? "_blank" : undefined}
+              rel={
+                ele.link.startsWith("http") ? "noopener noreferrer" : undefined
+              }
               key={index}
             >
               <Image

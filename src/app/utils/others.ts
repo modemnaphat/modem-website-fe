@@ -9,6 +9,7 @@ export const navMenuList = [
   { name: "About", id: "about" },
   { name: "Projects", id: "projects" },
   { name: "Contact", id: "contact" },
+  { name: "CV", href: "/cv" },
 ];
 
 export const contactList = [
@@ -26,7 +27,7 @@ export const contactList = [
   },
   {
     icon: CVSVG,
-    link: "https://drive.google.com/file/d/1RG3GwdO6N17FNaQID7m_KrJIfP1qkxQ-/view?usp=sharing",
+    link: "/cv",
   },
 ];
 
